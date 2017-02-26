@@ -59,11 +59,8 @@ def fbconnect():
 
 	app_id = json.loads(open('fb_client_secrets.json', 'r').read())[
 		'web']['app_id']
-	app_secret = json.loads(
-		open('fb_client_secrets.json', 'r').read())['web']['app_secret']
-	url = 'https://graph.facebook.com/oauth/access_token? \
-	grant_type=fb_exchange_token&client_id=%s \
-	&client_secret=%s&fb_exchange_token=%s' % (
+	app_secret = json.loads(open('fb_client_secrets.json', 'r').read())['web']['app_secret']
+	url = 'https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=%s&client_secret=%s&fb_exchange_token=%s' % (
 		app_id, app_secret, access_token)
 	h = httplib2.Http()
 	result = h.request(url, 'GET')[1]
@@ -90,8 +87,7 @@ def fbconnect():
 	login_session['access_token'] = stored_token
 
 	# Get user picture
-	url = 'https://graph.facebook.com/v2.4/me/picture?%s&redirect= \
-	0&height=200&width=200' % token
+	url = 'https://graph.facebook.com/v2.4/me/picture?%s&redirect=0&height=200&width=200' % token
 	h = httplib2.Http()
 	result = h.request(url, 'GET')[1]
 	data = json.loads(result)
@@ -123,8 +119,7 @@ def fbdisconnect():
 	facebook_id = login_session['facebook_id']
 	# The access token must me included to successfully logout
 	access_token = login_session['access_token']
-	url = 'https://graph.facebook.com/%s/permissions?access_token=%s' \
-				% (facebook_id,access_token)
+	url = 'https://graph.facebook.com/%s/permissions?access_token=%s' % (facebook_id,access_token)
 	h = httplib2.Http()
 	result = h.request(url, 'DELETE')[1]
 	return "you have been logged out"
@@ -154,8 +149,7 @@ def gconnect():
 
 	# Check that the access token is valid.
 	access_token = credentials.access_token
-	url = ('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=%s'
-		   % access_token)
+	url = ('https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=%s' % access_token)
 	h = httplib2.Http()
 	result = json.loads(h.request(url, 'GET')[1])
 	# If there was an error in the access token info, abort.
