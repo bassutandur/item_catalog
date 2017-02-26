@@ -1,0 +1,37 @@
+@media screen and (max-width: 450px) {
+	.blog-title {
+		font-size: 25px;
+	}
+
+	.signin-div {
+		width: 300px;
+		margin: 0 auto;
+		margin-top: 80px;
+	}
+
+	.signup-container {
+		width: 350px;
+		margin: 0 auto;
+		margin-top: 80px;
+		padding: 20px;
+	}
+}
+
+@media screen and (min-width: 451px) and (max-width: 768px) {
+	.blog-title {
+		font-size: 50px;
+	}
+
+	.signin-div {
+		width: 450px;
+		margin: 0 auto;
+		margin-top: 200px;
+	}
+
+	.signup-container {
+		width: 500px;
+		margin: 0 auto;
+		margin-top: 200px;
+		padding: 20px;
+	}
+}

@@ -1,0 +1,36 @@
+﻿{%extends "base.html"%}
+{% block header%}
+	{% if item %}
+<div class="container" style="border:1px solid #c5c5c5">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>
+				{{item.name}}
+			</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				{{item.description}}
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>
+				{{category.name}}
+			</p>
+		</div>
+	</div>
+	{% endif %}
+
+	<div class="row">
+		<div class="col-md-12 text-right" style="padding-bottom:5px">
+			{% if session['username'] and item.user_id == session['user_id']%}
+			<a href="{{url_for('editItem', item_id = item.id)}}" class="btn btn-primary">Edit Item</a>
+			<a href="{{url_for('deleteItem', item_id = item.id)}}" class="btn btn-primary">Delete Item</a>
+			{% endif %}
+		</div>
+		{% endblock %}
+	</div>

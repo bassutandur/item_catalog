@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Item Catalog</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}"/>
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+	<div class="container catalog-header">
+		<div class="row">
+			<div class="col-md-6">
+				<a href="{{url_for('showCategoriesandItems')}}"><h2>Catalog App</h2></a>
+			</div>
+			<div class="col-md-6 text-right">
+				<label>{{session['username']}}</label>
+				{%if 'username' not in session %}
+				<a href="{{url_for('showLogin')}}" class="btn btn-default" style="margin-top:5px; width:80px;">Login </a>
+				{% else %}
+				<a href="{{url_for('disconnect')}}" class="btn btn-default" style="margin-top:5px; width:80px;">Logout </a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		{% block header%}
+		{% endblock%}
+	</div>
+</body>
+</html>

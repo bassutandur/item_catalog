@@ -1,0 +1,31 @@
+﻿{%extends "base.html"%}
+{% block header%}
+<div class="container" style="border:1px solid #c5c5c5">
+	<div class="row">
+		<div class="col-md-3" style="border-right:2px solid grey;padding-right:10px;">
+			<h2>Categories</h2>
+			{% if categories %}
+			<ul>
+				{%for category in categories%}
+				<li><a href="{{url_for('showItemsByCategory', category_name = category.name)}}">{{category.name}}</a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</div>
+		<div class="col-md-6" style="padding-left:10px;">
+			{% if items %}
+			{%if items[0] %}
+			<h2>{{items[0].category.name}} Items</h2>
+			{% else %}
+			<h2>No Items Found</h2>
+			{% endif %}
+			<ul>
+				{%for item in items%}
+				<li><a href="{{url_for('showItem', category_name = item.category.name, item_name = item.name)}}">{{item.name}}</a></li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</div>
+	</div>
+</div>
+{% endblock%}

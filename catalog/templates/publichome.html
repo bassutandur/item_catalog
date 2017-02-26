@@ -1,0 +1,28 @@
+﻿{% extends "base.html" %}
+{% block header %}
+	<div class="container" style="border:1px solid #c5c5c5">
+		<div class="row">
+			{% if categories %}
+			<div class="col-md-3" style="border-right:2px solid grey;padding-right:10px;">
+				<h2>Categories</h2>
+				<ul>
+					{%for category in categories%}
+					<li><a href="{{url_for('showItemsByCategory', category_name = category.name)}}">{{category.name}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+
+			{% if items %}
+			<div class="col-md-6" style="padding-left:10px;">
+				<h2>Latest Items</h2>
+				<ul>
+					{%for item in items%}
+					<li><a href="{{url_for('showItem', category_name = item.category.name, item_name = item.name)}}">{{item.name}} ({{item.category.name}})</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}
