@@ -25,91 +25,110 @@ User1 = User(name="Basavaraj Tandur", email="bassu.tandur@gmail.com",
 session.add(User1)
 session.commit()
 
-#Add Categories
-category1 = Category(name = "Soccer")
+# Add Categories
+category1 = Category(name="Soccer")
 session.add(category1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Footwear", description = "These shoes provide better traction on \
-					grass, which increases player's ability to stay on their feet",
-					category = category1)
+item1 = Item(user_id=1,
+             name="Footwear",
+             description=("These shoes provide better traction on grass,"
+                          "which increases player's ability to stay"
+                          "on their feet"),
+             category=category1)
 
 session.add(item1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Shin Guards", description = "Shin-guards protect player's shins,\
-					a vulnerable part of a player's body that often gets kicked",
-					category = category1)
+item1 = Item(user_id=1,
+             name="Shin Guards",
+             description=("Shin-guards protect player's shins,"
+                          "a vulnerable part of a player's body"
+                          "that often gets kicked"),
+             category=category1)
 
 session.add(item1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Soccer Ball", description = "Soccer balls allows players to \
-					train and play individually or with friends outside of practice",
-					category = category1)
+item1 = Item(user_id=1,
+             name="Soccer Ball",
+             description=("Soccer balls allows players to"
+                          "play individually or with friends"
+                          "outside of practice"),
+             category=category1)
 
 session.add(item1)
 session.commit()
 
 
-category2 = Category(name = "Basketball")
+category2 = Category(name="Basketball")
 session.add(category2)
 session.commit()
 
-category3 = Category(name = "Baseball")
+category3 = Category(name="Baseball")
 session.add(category3)
 session.commit()
 
-category4 = Category(name = "Frisbee")
+category4 = Category(name="Frisbee")
 session.add(category4)
 session.commit()
 
-category5 = Category(name = "Snowboarding")
+category5 = Category(name="Snowboarding")
 session.add(category5)
 session.commit()
 
-category6 = Category(name = "Rock climbing")
+category6 = Category(name="Rock climbing")
 session.add(category6)
 session.commit()
 
-category7 = Category(name = "Foosball")
+category7 = Category(name="Foosball")
 session.add(category7)
 session.commit()
 
-category8 = Category(name = "Skating")
+category8 = Category(name="Skating")
 session.add(category8)
 session.commit()
 
-category9 = Category(name = "Hockey")
+category9 = Category(name="Hockey")
 session.add(category9)
 session.commit()
 
-category10 = Category(name = "Cricket")
+category10 = Category(name="Cricket")
 session.add(category10)
 session.commit()
 
-item1 = Item(user_id=1, name = "Cricket Ball", description = "Cricket balls allows players to \
-					train and play individually or with friends outside of practice",
-					category = category10)
+item1 = Item(user_id=1,
+             name="Cricket Ball",
+             description=("Cricket balls allows players to"
+                          "train and play individually or with friends"),
+             category=category10)
 
 session.add(item1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Inner Gloves", description = "Cotton padded & unpadded glove",
-					category = category10)
+item1 = Item(user_id=1,
+             name="Inner Gloves",
+             description="Cotton padded & unpadded glove",
+             category=category10)
 
 session.add(item1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Cricket Stumps", description = "Wooden normal stumps \
-					natural wax finish with 2 half bails or 1 single full bail",
-					category = category10)
+item1 = Item(user_id=1,
+             name="Cricket Stumps",
+             description=("Wooden normal stumps"
+                          "natural wax finish with 2 half"
+                          "bails or 1 single full bail"),
+             category=category10)
 
 session.add(item1)
 session.commit()
 
-item1 = Item(user_id=1, name = "Cricket Bat", description = "Cricket bats available in various size & finish",
-					category = category10)
+item1 = Item(user_id=1,
+             name="Cricket Bat",
+             description=("Cricket bats available"
+                          "in various size & finish"),
+             category=category10)
 
 session.add(item1)
 session.commit()
