@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -18,7 +18,8 @@
 				{%if 'username' not in session %}
 				<a href="{{url_for('showLogin')}}" class="btn btn-default" style="margin-top:5px; width:80px;">Login </a>
 				{% else %}
-				<a href="{{url_for('disconnect')}}" class="btn btn-default" style="margin-top:5px; width:80px;">Logout </a>
+				<img src="{{session['picture']}}" style="width:100px;height:100px;border-radius:50px" alt="Profile picture"/>
+				<a href="{{url_for('disconnect')}}" class="btn btn-default" style="margin-top:50px; width:80px;">Logout </a>
 				{% endif %}
 			</div>
 		</div>
